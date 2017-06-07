@@ -3,6 +3,7 @@ package com.example.wuw037.lostandfound;
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 import android.annotation.TargetApi;
+import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.support.annotation.NonNull;
 import android.support.design.widget.Snackbar;
@@ -83,12 +84,19 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
         });
 
         Button mEmailSignInButton = (Button) findViewById(R.id.email_sign_in_button);
-        mEmailSignInButton.setOnClickListener(new OnClickListener() {
+        mEmailSignInButton.setOnClickListener(new View.OnClickListener(){
             @Override
-            public void onClick(View view) {
-                attemptLogin();
+            public void onClick(View v) {
+                Intent i = new Intent(getApplicationContext(),Options.class);
+                startActivity(i);
             }
         });
+       // mEmailSignInButton.setOnClickListener(new OnClickListener() {
+           // @Override
+//            public void onClick(View view) {
+//                attemptLogin();
+//            }
+//        });
 
         mLoginFormView = findViewById(R.id.login_form);
         mProgressView = findViewById(R.id.login_progress);
