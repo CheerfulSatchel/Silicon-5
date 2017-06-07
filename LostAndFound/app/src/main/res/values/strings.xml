@@ -15,4 +15,5 @@
     </string>
     <string name="title_activity_options">Options</string>
     <string name="title_activity_lost_list">LostList</string>
+    <string name="title_activity_lost_form">LostForm</string>
 </resources>
