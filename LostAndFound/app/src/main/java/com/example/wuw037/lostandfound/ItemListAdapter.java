@@ -29,9 +29,11 @@ public class ItemListAdapter extends ArrayAdapter<Item>{
 
         TextView nameView = (TextView) rowView.findViewById(R.id.name);
         TextView bountyView = (TextView) rowView.findViewById(R.id.bounty);
+        TextView locationView = (TextView) rowView.findViewById(R.id.location);
 
         nameView.setText(items.get(position).getName());
         bountyView.setText( Integer.toString(items.get(position).getBounty()));
+//        locationView.setText(items.get(position).)
 
         return rowView;
 

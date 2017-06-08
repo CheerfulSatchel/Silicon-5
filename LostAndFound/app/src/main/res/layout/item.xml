@@ -27,4 +27,15 @@
         android:layout_marginLeft="192dp"
         app:layout_constraintTop_toTopOf="parent"
         android:layout_marginTop="16dp" />
+
+    <TextView
+        android:id="@+id/location"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Richmond, VA"
+        tools:text="Locat"
+        android:layout_marginLeft="20dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginTop="14dp"
+        app:layout_constraintTop_toBottomOf="@+id/name" />
 </android.support.constraint.ConstraintLayout>
