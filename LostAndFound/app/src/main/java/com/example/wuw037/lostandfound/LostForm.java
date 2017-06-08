@@ -38,7 +38,7 @@ public class LostForm extends AppCompatActivity implements LocationListener{
 
     double longitude, latitude;
     LocationManager locationManager;
-    EditText item, description, reward;
+    EditText item, description, reward, phone;
     private static final int TAKE_PHOTO_PERMISSION = 1;
     String city, state;
     String time;
@@ -51,12 +51,14 @@ public class LostForm extends AppCompatActivity implements LocationListener{
         item = (EditText) findViewById(R.id.item);
         description = (EditText) findViewById(R.id.description);
         reward = (EditText) findViewById(R.id.reward);
+        phone = (EditText) findViewById(R.id.lost_phone);
 
         mAuth = FirebaseAuth.getInstance();
 
         city = "";
         state = "";
         time = java.text.DateFormat.getDateTimeInstance().format(Calendar.getInstance().getTime());
+
         Toast.makeText(this, "Time: " + time, Toast.LENGTH_LONG).show();
 
         // Here is the code to handle permissions - you should not need to edit this.
@@ -130,9 +132,11 @@ public class LostForm extends AppCompatActivity implements LocationListener{
 
         String nItem = item.getText().toString();
         String nDescription = description.getText().toString();
+        String nPhone = phone.getText().toString();
+
         int nReward = Integer.parseInt(reward.getText().toString());
         Item newItem = new Item(nItem, city + ", " + state, nDescription, time, nReward, false,
-                mAuth.getCurrentUser().getUid().toString());
+                mAuth.getCurrentUser().getUid().toString(), nPhone);
 
         mRef.push().setValue(newItem);
 

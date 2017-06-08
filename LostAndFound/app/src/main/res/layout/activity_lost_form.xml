@@ -47,14 +47,28 @@
             </android.support.design.widget.TextInputLayout>
 
             <android.support.design.widget.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <EditText
+                android:id="@+id/reward"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Reward"
+                android:inputType="number"/>
+
+        </android.support.design.widget.TextInputLayout>
+
+            <android.support.design.widget.TextInputLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
 
                 <EditText
-                    android:id="@+id/reward"
+                    android:id="@+id/lost_phone"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="Reward" />
+                    android:hint="Phone Number"
+                    android:inputType="phone"/>
 
             </android.support.design.widget.TextInputLayout>
 

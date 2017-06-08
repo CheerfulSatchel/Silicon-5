@@ -14,6 +14,16 @@ public class Item implements Comparable<Item> {
     public boolean isFound;
     public String userID;
 
+    public String getTelephone() {
+        return telephone;
+    }
+
+    public void setTelephone(String telephone) {
+        this.telephone = telephone;
+    }
+
+    public String telephone;
+
     public Item() {
         this.name = "";
         this.location = "";
@@ -22,10 +32,11 @@ public class Item implements Comparable<Item> {
         this.bounty = 0;
         this.isFound = false;
         this.userID = "";
+        this.telephone = "";
     }
 
     // isFound is true if found, false if lost
-    public Item(String name, String location, String description, String time, int bounty, boolean isFound, String userID){
+    public Item(String name, String location, String description, String time, int bounty, boolean isFound, String userID, String telephone){
         this.name = name;
         this.location = location;
         this.description = description;
@@ -33,7 +44,7 @@ public class Item implements Comparable<Item> {
         this.bounty = bounty;
         this.isFound = isFound;
         this.userID = userID;
-
+        this.telephone = telephone;
     }
 
     public String getName() {
