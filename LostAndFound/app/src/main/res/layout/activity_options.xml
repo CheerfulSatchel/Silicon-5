@@ -1,43 +1,60 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.wuw037.lostandfound.Options">
+    tools:context="com.example.wuw037.lostandfound.Options"
+    android:weightSum="7"
+    android:orientation="vertical">
 
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:background="@color/colorPrimary"
+        android:elevation="0dp"
+        android:gravity="center_vertical"
+        android:text="Lost and Found"
+        android:textAlignment="center"
+        android:textAllCaps="true"
+        android:textColor="#FFFFFF"
+        android:textSize="24sp"
+        android:textStyle="italic" />
 
     <Button
         android:id="@+id/found"
-        android:layout_width="217dp"
-        android:layout_height="120dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:layout_gravity="top|center_horizontal"
+        android:layout_margin="20dp"
+        android:layout_weight="2"
+        android:background="@android:color/holo_green_light"
         android:text="Found Item"
-        app:layout_constraintTop_toTopOf="parent"
-        android:layout_marginTop="61dp"
-        android:layout_marginLeft="84dp"
-        app:layout_constraintLeft_toLeftOf="parent" />
+        android:textSize="36sp" />
 
     <Button
         android:id="@+id/lost"
-        android:layout_width="217dp"
-        android:layout_height="120dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:layout_gravity="bottom|center_horizontal"
+        android:layout_margin="20dp"
+        android:layout_weight="2"
+        android:background="@android:color/holo_red_light"
         android:text="Lost Item"
-        android:layout_marginTop="19dp"
-        app:layout_constraintTop_toBottomOf="@+id/found"
-        android:layout_marginLeft="84dp"
-        app:layout_constraintLeft_toLeftOf="parent" />
+        android:textSize="36sp" />
 
     <Button
         android:id="@+id/mypost_button"
-        android:layout_width="227dp"
-        android:layout_height="120dp"
-        android:layout_marginLeft="79dp"
-        android:layout_marginTop="17dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:layout_weight="2"
+        android:background="@color/colorAccent"
         android:text="My Posts"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/lost" />
+        android:textSize="36sp" />
 
 
-</android.support.constraint.ConstraintLayout>
+</LinearLayout>

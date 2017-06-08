@@ -27,7 +27,8 @@
         android:layout_height="match_parent"
         android:layout_marginTop="10dp"
         android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true" />
+        android:layout_centerHorizontal="true"
+        android:listSelector="@drawable/list_selector" />
 
 
 </RelativeLayout>
