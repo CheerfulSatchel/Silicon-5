@@ -56,9 +56,9 @@ public class ItemListAdapter extends ArrayAdapter<Item>{
         nameView.setText(items.get(position).getName());
         bountyView.setText("$" + Integer.toString(items.get(position).getBounty()));
 
-        //if the item is lost post the bounty, otherwise don't
-        if(!items.get(position).isFound())
-            bountyView.setText( Integer.toString(items.get(position).getBounty()));
+//        //if the item is lost post the bounty, otherwise don't
+//        if(!items.get(position).isFound())
+//            bountyView.setText( Integer.toString(items.get(position).getBounty()));
         locationView.setText(items.get(position).getLocation());
 
         rowView.setOnClickListener(new View.OnClickListener() {

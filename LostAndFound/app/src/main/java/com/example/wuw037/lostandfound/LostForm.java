@@ -55,8 +55,8 @@ public class LostForm extends AppCompatActivity implements LocationListener{
 
         mAuth = FirebaseAuth.getInstance();
 
-        city = "";
-        state = "";
+        city = "Richmond";
+        state = "VA";
         time = java.text.DateFormat.getDateTimeInstance().format(Calendar.getInstance().getTime());
 
         Toast.makeText(this, "Time: " + time, Toast.LENGTH_LONG).show();
@@ -91,8 +91,8 @@ public class LostForm extends AppCompatActivity implements LocationListener{
         Geocoder geocoder = new Geocoder(this, Locale.getDefault());
         List<Address> addresses;
 
-        city = "";
-        state = "";
+        city = "Richmond";
+        state = "VA";
 
         try {
             addresses = geocoder.getFromLocation(longitude, latitude, 4);
@@ -141,6 +141,12 @@ public class LostForm extends AppCompatActivity implements LocationListener{
         mRef.push().setValue(newItem);
 
         Intent intent = new Intent(this, LostList.class);
+        startActivity(intent);
+        finish();
+    }
+
+    public void onBackPressed() {
+        Intent intent = new Intent(this, FoundList.class);
         startActivity(intent);
         finish();
     }

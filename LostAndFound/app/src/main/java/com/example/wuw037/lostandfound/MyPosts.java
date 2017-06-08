@@ -1,5 +1,6 @@
 package com.example.wuw037.lostandfound;
 
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -66,6 +67,12 @@ public class MyPosts extends AppCompatActivity{
         listView.setAdapter(adapter);
 
         //listView.setOnClickListener();
+    }
+
+    public void onBackPressed() {
+        Intent intent = new Intent(this, Options.class);
+        startActivity(intent);
+        finish();
     }
 
 
