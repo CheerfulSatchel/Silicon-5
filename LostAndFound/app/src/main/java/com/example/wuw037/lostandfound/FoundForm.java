@@ -47,12 +47,12 @@ public class FoundForm extends AppCompatActivity implements LocationListener {
 
         item = (EditText) findViewById(R.id.found_item);
         description = (EditText) findViewById(R.id.found_description);
-        phone = (EditText) findViewById(R.id.lost_phone);
+        phone = (EditText) findViewById(R.id.found_phone);
 
         mAuth = FirebaseAuth.getInstance();
 
-        city = "";
-        state = "";
+        city = "Richmond";
+        state = "VA";
         time = java.text.DateFormat.getDateTimeInstance().format(Calendar.getInstance().getTime());
 
         Toast.makeText(this, "Time: " + time, Toast.LENGTH_LONG).show();
@@ -87,8 +87,8 @@ public class FoundForm extends AppCompatActivity implements LocationListener {
         Geocoder geocoder = new Geocoder(this, Locale.getDefault());
         List<Address> addresses;
 
-        city = "";
-        state = "";
+        city = "Richmond";
+        state = "VA";
 
         try {
             addresses = geocoder.getFromLocation(longitude, latitude, 4);
