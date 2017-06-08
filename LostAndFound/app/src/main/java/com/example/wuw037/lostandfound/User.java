@@ -20,5 +20,4 @@ public class User {
     public String getPhone_num() {
         return this.phoneNum;
     }
-    
 }
