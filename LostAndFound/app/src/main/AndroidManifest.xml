@@ -23,6 +23,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".FoundList"></activity>
+        <activity android:name=".MyPosts"></activity>
         <activity
             android:name=".Options"
             android:label="@string/title_activity_options"

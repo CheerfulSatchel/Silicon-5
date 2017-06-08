@@ -17,23 +17,14 @@ public class Options extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_options);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
 
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });
 
         Button found = (Button) findViewById(R.id.found);
         found.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
-
+                Intent i = new Intent(getApplicationContext(), FoundList.class);
+                startActivity(i);
 
             }
         });
@@ -43,6 +34,15 @@ public class Options extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent i = new Intent(getApplicationContext(),LostList.class);
+                startActivity(i);
+            }
+        });
+
+        Button myposts = (Button) findViewById(R.id.mypost_button);
+        myposts.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(getApplicationContext(), MyPosts.class);
                 startActivity(i);
             }
         });
