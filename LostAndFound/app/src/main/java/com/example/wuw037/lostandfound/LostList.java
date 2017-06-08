@@ -42,10 +42,6 @@ public class LostList extends AppCompatActivity {
         });
 
         listView = (ListView) findViewById(R.id.lost_list);
-//        Item item1 = new Item("wallet", 300);
-//        Item item2 = new Item("purse", 200);
-//        Item item3 = new Item("car", 5000);
-
         items = new ArrayList<>();
 
         lostItemsRef = FirebaseDatabase.getInstance().getReference("items/");
@@ -55,7 +51,8 @@ public class LostList extends AppCompatActivity {
                 for(DataSnapshot d : dataSnapshot.getChildren()) {
                     Item item = d.getValue(Item.class);
                     System.out.println("PPPPPPP " + item.getName());
-                    items.add(item);
+                    if(!item.isFound())
+                        items.add(item);
                 }
                 ItemListAdapter adapter = new ItemListAdapter(getApplicationContext(), items);
                 listView.setAdapter(adapter);
@@ -66,11 +63,6 @@ public class LostList extends AppCompatActivity {
 
             }
         });
-
-
-//        items.add(item1);
-//        items.add(item2);
-//        items.add(item3);
 
         ItemListAdapter adapter = new ItemListAdapter(this, items);
         listView.setAdapter(adapter);

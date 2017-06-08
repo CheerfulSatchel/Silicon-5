@@ -24,6 +24,7 @@ public class Options extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent i = new Intent(getApplicationContext(), FoundList.class);
+                i.putExtra("Found", true);
                 startActivity(i);
 
             }
@@ -34,6 +35,7 @@ public class Options extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent i = new Intent(getApplicationContext(),LostList.class);
+                i.putExtra("Found", false);
                 startActivity(i);
             }
         });

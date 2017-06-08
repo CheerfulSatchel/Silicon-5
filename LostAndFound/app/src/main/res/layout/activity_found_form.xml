@@ -28,7 +28,7 @@
                 android:layout_height="match_parent">
 
                 <EditText
-                    android:id="@+id/item"
+                    android:id="@+id/found_item"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="Item" />
@@ -39,32 +39,21 @@
                 android:layout_height="match_parent">
 
                 <EditText
-                    android:id="@+id/description"
+                    android:id="@+id/found_description"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="Description" />
 
             </android.support.design.widget.TextInputLayout>
 
-            <android.support.design.widget.TextInputLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
-
-                <EditText
-                    android:id="@+id/reward"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:hint="Reward" />
-
-            </android.support.design.widget.TextInputLayout>
 
             <Button
-                android:id="@+id/submit_lost_item"
+                android:id="@+id/submit_found_item"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:text="Submit"
-                android:onClick="SubmitLostForm"/>
+                android:onClick="SubmitFoundForm"/>
 
 
         </LinearLayout>
