@@ -33,6 +33,7 @@
             android:name=".MyPosts"
             android:theme="@style/AppTheme.NoActionBar">
         </activity>
+        <activity android:name=".ItemDetails"></activity>
         <activity
             android:name=".Options"
             android:label="@string/title_activity_options"
