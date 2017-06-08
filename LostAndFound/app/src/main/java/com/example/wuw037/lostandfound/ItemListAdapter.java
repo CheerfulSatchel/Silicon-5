@@ -64,41 +64,52 @@ public class ItemListAdapter extends ArrayAdapter<Item>{
         rowView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                preferences = getContext().getSharedPreferences(PREFS_NAME, 0);
-                String optionVal = preferences.getString("option", "none");
-                myPostsRef = FirebaseDatabase.getInstance().getReference("items/");
 
-                // Found
-                if(optionVal.equals("0")) {
+                Intent i = new Intent(getContext(), ItemDetails.class);
+                i.putExtra("name", items.get(pos).getName());
+                i.putExtra("description", items.get(pos).getDescription());
+                i.putExtra("time", items.get(pos).getTime());
+                i.putExtra("telephone", items.get(pos).getTelephone());
+                i.putExtra("bounty", Integer.toString(items.get(pos).getBounty()));
+                i.putExtra("location", items.get(pos).getLocation());
+                i.putExtra("found", items.get(pos).isFound());
+                context.startActivity(i);
 
-                }
-                // Lost
-                else if(optionVal.equals("1")) {
-
-                }
-                //My Posts
-                else if(optionVal.equals("2")) {
-
-                    // Delete item from Firebase
-                    myPostsRef.addValueEventListener(new ValueEventListener() {
-                        @Override
-                        public void onDataChange(DataSnapshot dataSnapshot) {
-                            for(DataSnapshot d : dataSnapshot.getChildren()) {
-                                Item item = d.getValue(Item.class);
-                                if(items.get(pos).compareTo(item) == 0) {
-                                    System.out.println("YYYYYY: " + d.getKey().toString());
-                                    myPostsRef.child(d.getKey()).removeValue();
-                                }
-                            }
-                        }
-
-                        @Override
-                        public void onCancelled(DatabaseError databaseError) {
-
-                        }
-                    });
-
-                }
+//                preferences = getContext().getSharedPreferences(PREFS_NAME, 0);
+//                String optionVal = preferences.getString("option", "none");
+//                myPostsRef = FirebaseDatabase.getInstance().getReference("items/");
+//
+//                // Found
+//                if(optionVal.equals("0")) {
+//
+//                }
+//                // Lost
+//                else if(optionVal.equals("1")) {
+//
+//                }
+//                //My Posts
+//                else if(optionVal.equals("2")) {
+//
+//                    // Delete item from Firebase
+//                    myPostsRef.addValueEventListener(new ValueEventListener() {
+//                        @Override
+//                        public void onDataChange(DataSnapshot dataSnapshot) {
+//                            for(DataSnapshot d : dataSnapshot.getChildren()) {
+//                                Item item = d.getValue(Item.class);
+//                                if(items.get(pos).compareTo(item) == 0) {
+//                                    System.out.println("YYYYYY: " + d.getKey().toString());
+//                                    myPostsRef.child(d.getKey()).removeValue();
+//                                }
+//                            }
+//                        }
+//
+//                        @Override
+//                        public void onCancelled(DatabaseError databaseError) {
+//
+//                        }
+//                    });
+//
+//                }
 
                 }
         });
