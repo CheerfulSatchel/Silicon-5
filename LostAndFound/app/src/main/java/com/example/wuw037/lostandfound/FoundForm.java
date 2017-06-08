@@ -141,6 +141,12 @@ public class FoundForm extends AppCompatActivity implements LocationListener {
         finish();
     }
 
+    public void onBackPressed() {
+        Intent intent = new Intent(this, LostList.class);
+        startActivity(intent);
+        finish();
+    }
+
 
 
 

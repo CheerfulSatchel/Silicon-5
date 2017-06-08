@@ -69,4 +69,10 @@ public class LostList extends AppCompatActivity {
 
     }
 
+    public void onBackPressed() {
+        Intent intent = new Intent(this, Options.class);
+        startActivity(intent);
+        finish();
+    }
+
 }
