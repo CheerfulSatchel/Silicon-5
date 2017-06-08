@@ -18,6 +18,7 @@ import com.facebook.CallbackManager;
 import com.facebook.FacebookCallback;
 import com.facebook.FacebookException;
 import com.facebook.FacebookSdk;
+import com.facebook.appevents.AppEventsLogger;
 import com.facebook.Profile;
 import com.facebook.login.LoginResult;
 import com.facebook.login.widget.LoginButton;
@@ -61,7 +62,7 @@ public class FacebookLoginActivity extends AppCompatActivity {
             @Override
             public void onSuccess(LoginResult loginResult) {
                 handleFacebookAccessToken(loginResult.getAccessToken());
-                Log.v("PPPPP", "BBBBB");
+                Log.v("PPPPP", loginResult.getRecentlyGrantedPermissions().toString());
             }
 
             @Override
@@ -78,6 +79,14 @@ public class FacebookLoginActivity extends AppCompatActivity {
 
     }
 
+    public void onStart() {
+        super.onStart();
+        FirebaseUser currentUser = mAuth.getCurrentUser();
+        if(currentUser != null)
+            System.out.println("NNNNNN: " + currentUser.getDisplayName());
+
+    }
+
     protected void onActivityResult(int requestCode, int resultCode, Intent data)  {
         super.onActivityResult(requestCode, resultCode, data);
 
@@ -86,12 +95,19 @@ public class FacebookLoginActivity extends AppCompatActivity {
 
     private void handleFacebookAccessToken(AccessToken aToken) {
         AuthCredential credential = FacebookAuthProvider.getCredential(aToken.getToken());
-        System.out.println("POTATO");
+        System.out.println("POTATO " + aToken.getPermissions().toString());
+
+
+        Profile profile = Profile.getCurrentProfile();
+        System.out.println(profile.getFirstName());
+        System.out.println(profile.getId());
+
+
 
         mAuth.signInWithCredential(credential).addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
-                if(!task.isSuccessful()) {
+                if(task.isSuccessful()) {
                     // Sign in was successful!!!
                     startActivity(new Intent(getApplicationContext(), Options.class));
                     finish();
