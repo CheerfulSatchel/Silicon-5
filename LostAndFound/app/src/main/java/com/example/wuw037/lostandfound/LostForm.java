@@ -131,7 +131,8 @@ public class LostForm extends AppCompatActivity implements LocationListener{
         String nItem = item.getText().toString();
         String nDescription = description.getText().toString();
         int nReward = Integer.parseInt(reward.getText().toString());
-        Item newItem = new Item(nItem, city + ", " + state, nDescription, time, nReward, false);
+        Item newItem = new Item(nItem, city + ", " + state, nDescription, time, nReward, false,
+                mAuth.getCurrentUser().getUid().toString());
 
         mRef.push().setValue(newItem);
 

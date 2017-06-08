@@ -128,7 +128,8 @@ public class FoundForm extends AppCompatActivity implements LocationListener {
 
         String nItem = item.getText().toString();
         String nDescription = description.getText().toString();
-        Item newItem = new Item(nItem, city + ", " + state, nDescription, time, 0, true);
+        Item newItem = new Item(nItem, city + ", " + state, nDescription, time, 0, true,
+                mAuth.getCurrentUser().getUid().toString());
 
         mRef.push().setValue(newItem);
 

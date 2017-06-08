@@ -42,7 +42,8 @@
         <activity android:name=".CreateUserActivity" />
         <activity
             android:name=".FoundForm"
-            android:label="@string/title_activity_found_form"></activity>
+            android:label="@string/title_activity_found_form" />
+        <activity android:name=".LostItem"></activity>
     </application>
 
 </manifest>

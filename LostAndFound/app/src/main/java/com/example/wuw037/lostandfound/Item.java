@@ -4,7 +4,7 @@ package com.example.wuw037.lostandfound;
  * Created by wuw037 on 6/7/17.
  */
 
-public class Item {
+public class Item implements Comparable<Item> {
 
     public String name;
     public String location;
@@ -12,6 +12,7 @@ public class Item {
     public String time;
     public int bounty;
     public boolean isFound;
+    public String userID;
 
     public Item() {
         this.name = "";
@@ -20,16 +21,18 @@ public class Item {
         this.time = "";
         this.bounty = 0;
         this.isFound = false;
+        this.userID = "";
     }
 
     // isFound is true if found, false if lost
-    public Item(String name, String location, String description, String time, int bounty, boolean isFound){
+    public Item(String name, String location, String description, String time, int bounty, boolean isFound, String userID){
         this.name = name;
         this.location = location;
         this.description = description;
         this.time = time;
         this.bounty = bounty;
         this.isFound = isFound;
+        this.userID = userID;
 
     }
 
@@ -79,6 +82,24 @@ public class Item {
 
     public void setFound(boolean found) {
         isFound = found;
+    }
+
+    public String getUserID() {
+        return userID;
+    }
+
+    public void setUserID(String userID) {
+        this.userID = userID;
+    }
+
+    public int compareTo(Item item) {
+        if(this.getName().equals(item.getName())
+                && this.getUserID().equals(item.getUserID())
+                && this.getBounty() == item.getBounty()) {
+            return 0;
+        }
+        else
+            return -1;
     }
 
 
