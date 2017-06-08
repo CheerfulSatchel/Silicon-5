@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.wuw037.lostandfound.LostForm"
+    tools:context="com.example.wuw037.lostandfound.FoundForm"
     android:orientation="vertical">
 
 
@@ -46,7 +46,6 @@
 
             </android.support.design.widget.TextInputLayout>
 
-
             <Button
                 android:id="@+id/submit_found_item"
                 android:layout_width="match_parent"
@@ -61,6 +60,7 @@
 
 
     <include layout="@layout/content_lost_form" />
+
 
 
 </LinearLayout>

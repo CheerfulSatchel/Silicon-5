@@ -40,7 +40,9 @@
             android:label="@string/title_activity_lost_form"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".CreateUserActivity" />
-        <activity android:name=".FoundForm"></activity>
+        <activity
+            android:name=".FoundForm"
+            android:label="@string/title_activity_found_form"></activity>
     </application>
 
 </manifest>

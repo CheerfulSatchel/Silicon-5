@@ -23,6 +23,7 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
+import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
 import java.util.Locale;
@@ -46,6 +47,7 @@ public class FoundForm extends AppCompatActivity implements LocationListener {
 
         item = (EditText) findViewById(R.id.found_item);
         description = (EditText) findViewById(R.id.found_description);
+
 
         mAuth = FirebaseAuth.getInstance();
 
@@ -121,6 +123,7 @@ public class FoundForm extends AppCompatActivity implements LocationListener {
     public void onProviderDisabled(String s) {}
 
     public void SubmitFoundForm(View v) {
+
         mRef = FirebaseDatabase.getInstance().getReference("items");
 
         String nItem = item.getText().toString();
@@ -130,6 +133,7 @@ public class FoundForm extends AppCompatActivity implements LocationListener {
         mRef.push().setValue(newItem);
 
         Intent intent = new Intent(this, FoundList.class);
+
         startActivity(intent);
         finish();
     }
