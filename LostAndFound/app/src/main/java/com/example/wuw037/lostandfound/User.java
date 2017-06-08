@@ -6,10 +6,12 @@ package com.example.wuw037.lostandfound;
 
 public class User {
     private String name;
+    private String pass;
     private String phoneNum;
 
-    public User(String name, String phoneNum) {
+    public User(String name, String pass, String phoneNum) {
         this.name = name;
+        this.pass = pass;
         this.phoneNum = phoneNum;
     }
 
@@ -17,7 +19,11 @@ public class User {
         return this.name;
     }
 
-    public String getPhone_num() {
+    public String getPass() {
+        return this.pass;
+    }
+
+    public String getPhoneNum() {
         return this.phoneNum;
     }
 }
