@@ -8,6 +8,8 @@
     <uses-permission android:name="android.permission.READ_PROFILE" />
     <uses-permission android:name="android.permission.READ_CONTACTS" />
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
 
     <application
         android:allowBackup="true"
@@ -43,7 +45,11 @@
             android:name=".LostForm"
             android:label="@string/title_activity_lost_form"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".CreateUserActivity"></activity>
+        <activity android:name=".CreateUserActivity" />
+        <activity
+            android:name=".FoundForm"
+            android:label="@string/title_activity_found_form" />
+        <activity android:name=".LostItem"></activity>
     </application>
 
 </manifest>

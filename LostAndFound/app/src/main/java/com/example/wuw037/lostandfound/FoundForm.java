@@ -9,13 +9,10 @@ import android.location.Location;
 import android.location.LocationListener;
 import android.location.LocationManager;
 import android.os.Build;
-import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
+import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.view.WindowManager;
@@ -31,14 +28,14 @@ import java.util.Calendar;
 import java.util.List;
 import java.util.Locale;
 
-public class LostForm extends AppCompatActivity implements LocationListener{
+public class FoundForm extends AppCompatActivity implements LocationListener {
 
     FirebaseAuth mAuth;
     DatabaseReference mRef;
 
     double longitude, latitude;
     LocationManager locationManager;
-    EditText item, description, reward;
+    EditText item, description;
     private static final int TAKE_PHOTO_PERMISSION = 1;
     String city, state;
     String time;
@@ -46,11 +43,11 @@ public class LostForm extends AppCompatActivity implements LocationListener{
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_lost_form);
+        setContentView(R.layout.activity_found_form);
 
-        item = (EditText) findViewById(R.id.item);
-        description = (EditText) findViewById(R.id.description);
-        reward = (EditText) findViewById(R.id.reward);
+        item = (EditText) findViewById(R.id.found_item);
+        description = (EditText) findViewById(R.id.found_description);
+
 
         mAuth = FirebaseAuth.getInstance();
 
@@ -125,18 +122,19 @@ public class LostForm extends AppCompatActivity implements LocationListener{
     @Override
     public void onProviderDisabled(String s) {}
 
-    public void SubmitLostForm(View v) {
+    public void SubmitFoundForm(View v) {
+
         mRef = FirebaseDatabase.getInstance().getReference("items");
 
         String nItem = item.getText().toString();
         String nDescription = description.getText().toString();
-        int nReward = Integer.parseInt(reward.getText().toString());
-        Item newItem = new Item(nItem, city + ", " + state, nDescription, time, nReward, false,
+        Item newItem = new Item(nItem, city + ", " + state, nDescription, time, 0, true,
                 mAuth.getCurrentUser().getUid().toString());
 
         mRef.push().setValue(newItem);
 
-        Intent intent = new Intent(this, LostList.class);
+        Intent intent = new Intent(this, FoundList.class);
+
         startActivity(intent);
         finish();
     }

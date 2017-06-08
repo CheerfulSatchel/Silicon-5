@@ -32,6 +32,7 @@
         android:layout_height="wrap_content"
 
         android:text="$200"
+
         android:textColor="@color/colorAccent"
         android:textSize="24sp"
         android:layout_alignBaseline="@+id/name"
