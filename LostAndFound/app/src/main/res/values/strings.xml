@@ -6,6 +6,11 @@
     <string name="prompt_password">Password (optional)</string>
     <string name="action_sign_in">Sign in or register</string>
     <string name="action_sign_in_short">Sign in</string>
+
+    <string name="facebook_sign_in">Sign in with Facebook</string>
+    <string name="facebook_app_id">134865183751683</string>
+    <string name="fb_login_protocol_scheme">fb134865183751683</string>
+
     <string name="error_invalid_email">This email address is invalid</string>
     <string name="error_invalid_password">This password is too short</string>
     <string name="error_incorrect_password">This password is incorrect</string>
@@ -15,4 +20,6 @@
     </string>
     <string name="title_activity_options">Options</string>
     <string name="title_activity_lost_list">LostList</string>
+    <string name="title_activity_lost_form">LostForm</string>
+    <string name="title_activity_found_list">FoundList</string>
 </resources>

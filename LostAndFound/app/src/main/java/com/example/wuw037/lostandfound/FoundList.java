@@ -3,6 +3,12 @@ package com.example.wuw037.lostandfound;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.ListView;
+import android.content.Intent;
+import android.os.Bundle;
+import android.app.Activity;
+import android.view.View;
+import android.widget.Button;
+
 
 import java.util.ArrayList;
 
@@ -32,6 +38,14 @@ public class FoundList extends AppCompatActivity{
         ItemListAdapter adapter = new ItemListAdapter(this, items);
         listView.setAdapter(adapter);
 
+//        Button report_lost_item = (Button) findViewById(R.id.report_lost_item);
+//        report_lost_item.setOnClickListener(new View.OnClickListener(){
+//            @Override
+//            public void onClick(View v) {
+//                Intent i = new Intent(getApplicationContext(),LostForm.class);
+//                startActivity(i);
+//            }
+//        });
     }
 
 }

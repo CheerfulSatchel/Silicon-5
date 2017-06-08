@@ -8,7 +8,7 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="com.example.wuw037.lostandfound.LoginActivity">
+    tools:context="com.example.wuw037.lostandfound.FacebookLoginActivity">
 
     <!-- Login progress -->
     <ProgressBar
@@ -70,16 +70,13 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
                 android:text="@string/action_sign_in"
-                android:textStyle="bold"
-                android:onClick="SignIn"/>
+                android:textStyle="bold" />
 
-            <Button
+            <com.facebook.login.widget.LoginButton
+                android:id = "@+id/facebook_sign_in_button"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Create Account"
-                android:textStyle="bold"
-                android:onClick="CreateAccount"/>
-
+                />
         </LinearLayout>
     </ScrollView>
 </LinearLayout>

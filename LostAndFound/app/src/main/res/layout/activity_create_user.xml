@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.wuw037.lostandfound.CreateUserActivity">
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/create_user_name"
+        android:hint="name"/>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/create_user_email"
+        android:hint="email"
+        android:layout_below="@id/create_user_name"/>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/create_user_password"
+        android:hint="password"
+        android:inputType="textPassword"
+        android:layout_below="@id/create_user_email"/>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/create_user_phone"
+        android:hint="phone"
+        android:inputType="phone"
+        android:layout_below="@id/create_user_password"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text = "Create"
+        android:layout_below="@id/create_user_phone"
+        android:onClick="CreateNewAccount"/>
+
+</RelativeLayout>
